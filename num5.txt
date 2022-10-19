@@ -1,0 +1,11 @@
+Mention 3 C++ features that are removed in JavaScript. Mention 3 C++ features that are still available in
+JavaScript. Consider complex data types (lists, arrays, objects), syntax, recursion and functional programming.
+
+IN C++ but not JavaScript
+Pointers
+Templates
+delete operator in java due to java’s garbage collection
+Global variables
+Nultiple inheritance
+
+IN Javascript and C++
