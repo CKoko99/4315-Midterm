@@ -1,0 +1,27 @@
+Lambda calculus
+Lambda calculus has a way of spiraling into a lot of steps, making solving problems tedious, and it can look real hard, but it isn't actually that bad. In lambda calculus, there are only lambdas, and all you can do with them is substitution. Lambdas are like a function or a method - if you are familiar with programming, they are functions that take a function as input, and return a new function as output.
+
+There are basically two and a half processes in lambda calculus:
+1) Alpha Conversion - if you are applying two lambda expressions with the same variable name inside, you change one of them to a new variable name. For example (λx.xx)(λx.x) becomes something like (λx.xx)(λy.y) or (λx.xx)(λx'.x') after reduction. The result is equivalent to what you start out with, just with different variable names.
+
+2) Beta Reduction - Basically just substitution. This is the process of calling the lambda expression with input, and getting the output. A lambda expression is like a function, you call the function by substituting the input throughout the expression. Take (λx.xy)z, the second half of (λx.xy), everything after the period, is output, you keep the output, but substitute the variable (named before the period) with the provided input. z is the input, x is the parameter name, xy is the output. Find all occurrences of the parameter in the output, and replace them with the input and that is what it reduces to, so (λx.xy)z => xy with z substituted for x, which is zy.
+
+2.5) Eta Conversion/Eta Reduction - This is special case reduction, which I only call half a process, because it's kinda Beta Reduction, kinda, as in technichally it's not. You may see it written on wikipedia or in a textbook as "Eta-conversion converts between λx.(f x) and f whenever x does not appear free in f", which sounds really confusing. All that really means is λx.(f x) = f if f does not make use of x. if It actually makes complete sense but is better shown through an example. Consider (λx.(λy.yy)x), this is equivalent through eta reduction to (λy.yy), because f = (λy.yy), which does not have an x in it, you could show this by reducing it, as it would solve to (λx.xx), which is observably the same thing. You said to focus on beta reduction, and so I am not going to discuss eta conversion in the detail it deserves, but plenty of people gave their go at it on the cs theory stack exchange
+
+On the Notation for Beta Reduction:
+I'm going to use the following notation for substituting the provided input into the output:
+
+(λ param . output)input => output [param := input] => result
+
+This means we substitute occurrences of param in output, and that is what it reduces down to
+
+Example:
+
+(λx.xy)z
+
+= (xy)[x:=z]
+
+= (zy)
+
+= zy
+

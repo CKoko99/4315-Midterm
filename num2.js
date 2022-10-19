@@ -8,8 +8,8 @@ function recursiveInsertionSort(unsortedArray) {
 
     for(var i=array.length-1; i>=0; i--) {
         if(temp > array[i]) {
-            array.splice(i+1, 0, temp);
-            return array;
+            newarray = array.splice(i+1, 0, temp);
+            return newarray
         }
     }
     return [temp].concat( array);

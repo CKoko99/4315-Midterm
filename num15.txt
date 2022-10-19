@@ -1,0 +1,3 @@
+LL Derivation of 2+3*4 (evaluate backwards)
+3*4= 12
+2+12 = 14
