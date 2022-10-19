@@ -1,0 +1,54 @@
+Give a regular expression for signed real numbers, used by the lexical analyzer. 
+Program it in C++ or JavaScript
+
+Regular expression:
+ 
+([+-]?)([0-9]*)(\.)?([0-9]*)([eE]([+-]?)([0-9]*))?
+ 
+Program  in C++:
+ 
+
+#include <iostream>
+#include <string>
+#include <regex>
+ 
+int main()
+{
+    std::string s = "-1.23e+45";
+    std::regex e("([+-]?)([0-9]*)(\.)?([0-9]*)([eE]([+-]?)([0-9]*))?");
+ 
+    if (std::regex_match(s, e))
+       std::cout << "Found a match!" << std::endl;
+    else
+       std::cout << "No match found!" << std::endl;
+}
+
+
+Explanationfor step 1
+
+The regular expression given above matches signed real numbers, 
+which are used by the lexical analyzer. The expression consists of seven subexpressions,
+ each of which is optional except for the first. 
+ The first subexpression, ([+-]?) matches an optional sign character (+ or -). 
+ 
+The second subexpression, ([0-9]*) matches an optional sequence of digits (0-9). 
+The third subexpression, (\.)? matches an optional decimal point. 
+The fourth subexpression, ([0-9]*) matches an optional sequence of digits (0-9).
+The fifth subexpression, ([eE]([+-]?)([0-9]*))? matches an optional exponent, 
+which consists of an e or E character followed by an optional sign character (+ or -) 
+and an optional sequence of digits (0-9).
+ 
+The regular expression given above is programmed in C++. 
+The first line includes the header file iostream, which is needed for input/output.
+ The second line includes the header file string, which is needed to use the string data type.
+  The third line includes the header file regex, which is needed to use regular expressions.
+ 
+The fourth line defines a string variable called s and assigns it the value "-1.23e+45". 
+The fifth line defines a regex variable called e and assigns it the regular expression given above.
+ 
+The sixth line uses the regex_match() function to attempt to match the string s against 
+the regular expression e. If a match is found, the seventh line prints "Found a match!" 
+If no match is found, the eighth line prints "No match found!"
+ 
+When run, the program prints "Found a match!" to the console, 
+indicating that the string s does indeed match the regular expression e.

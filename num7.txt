@@ -1,29 +1,11 @@
-Qa: LL and LR are two main parser families. Contrast them. Which one is preferable? why?
+LL and LR are two main parser families. Contrast them. Which one is preferable? why?
 
-Qb: In a Python program with 3 functions defined, the main body at the bottom calls f1(x), then function f1(x) calls f2(y), f2(y) calls f3(z). Explain how function calls are managed during evaluation
 
-Qa
 The LR parser is a bottom-up parser that reads the input from left to right and applies reduction operations. The LR parser can handle left-recursive grammar rules. 
 The LL parser is a top-down parser that reads the input from left to right and applies expansion operations. The LL parser cannot handle left-recursive grammar rules.
-Qb
-A function call is managed during evaluation by first looking at the function definition to see what the function needs in order to run. In this case, f1(x) needs f2(y), so it will first call f2(y). Then, f2(y) needs f3(z), so it will call f3(z).
-Qa
+
+
 Each parser family has its own benefits and drawbacks. For example, LR parsers are typically easier to construct, since they rely on rather simple parsing tables, but they have a more restrictive grammar and do not deal well with left recursion. 
 On the other hand, LL parsers are often more efficient in terms of memory usage and may be easier to extend to allow for efficient parsing of ambiguous grammars, but they can be more difficult to construct.
 Parser families are groups of parsers that share similar characteristics. For example, the LR parser and LL parser are two parser families that share the characteristic of reading input from left to right. 
 The LR parser is a type of bottom-up parser. The LL parser is a type of top-down parser.
-For example, if we have the following functions: 
-def f1(x):
- print(x) 
- 
-def f2(y):
-  print(y) 
-
-def f3(z): 
- print(z) 
-
-And we call f1(x), the following will happen:
- 1. f1(x) will first check to see if it needs any other functions in order to run. In this case, it needs f2(y).
- 2. f1(x) will call f2(y), and pass the value of x to it. 
-3. f2(y) will check to see if it needs any other functions in order to run. In this case, it needs f3(z). 
-4. f2(y) will call f3(z), and pass the value of y to it. 5. f3(z) will print the value of z.

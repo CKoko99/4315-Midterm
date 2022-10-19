@@ -1,0 +1,26 @@
+11.	List C language features that have been highly influential in newer languages. Be specific.
+
+Portability, C programs are machine independent. 
+This means that they can run in different machines with few systems specific changes or none. 
+Because of the growth in the market and the creation of new systems and hardware. This became a 
+crucial feature for newer programming languages. To the point that many languages are more 
+portable than C. For example Java is a highly portable language that is easy to run in different 
+operating systems.
+
+Libraries, C has many libraries that help programmers deliver code easily. 
+This is a feature that has been implemented in all modern languages that I know, 
+such as Python, JavaScript, Java, and so on. Libraries provide built-in functions to do 
+common tasks programmers need to perform regularly.
+
+Memory management, C allows manual memory management, which in turn allows programmers 
+to create efficient programs. This feature influenced C++ to allow this same functionality 
+to manage the hardware in a low level with a high level programming language. However, this 
+feature also makes programs likely to run into problems so many other programming languages 
+were designed to handle memory management by the compilers and interpreters instead of giving 
+that freedom to the programmers. For example, Java and Javascript use garbage collectors to free 
+memory. So programmers don’t have to worry about memory.
+
+Modularity, C allows to create structured and well-organized code. This allows reusability and 
+scalability. This feature inspired a paradigm called Object Oriented Programming, which is a way 
+to organize code so that programs can be scale up, debug and created more efficiently. Even though 
+OOP is not present in C. It was definitely a predecessor to the invention of OOP.
