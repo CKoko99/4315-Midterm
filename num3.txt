@@ -1,0 +1,6 @@
+Evaluate the following lambda expression: (λx.x*2)((λx.x+1)2)
+(λx.x*2)((λx.x+1)2)=(λx.x*2)(λx.2+1)
+(λx.x*2)(λx.2+1)=(λx.x*2)
+(λx.x*2)3=(λx.3*2)
+(λx.3*2)=6
+

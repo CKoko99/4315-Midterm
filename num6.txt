@@ -1,0 +1,52 @@
+Give an ambiguous BNF context-free grammar for Python arithmetic expressions
+with +∗ and assigment (=). Explain how to transform the grammar into a non-ambiguous one.
+Is your grammar acceptable for LL or an LR parser? why? 
+Also write a short C++ function to slice a Python list using the Python list slice operator. 
+You can assume the lexical tokens are already in a C++ list; 
+Explain the data structure you use to store list elements.
+
+S -> E 
+E -> E + T 
+E -> T 
+T -> T * F 
+T -> F 
+F -> id 
+F -> (E) 
+ 
+The grammar is acceptable for an LL parser. 
+ 
+To slice a Python list, we can use the following C++ function: 
+ 
+std::vector<int> slice(std::vector<int> list, int start, int end) { 
+std::vector<int> result; 
+for (int i = start; i < end; i++) { 
+result.push_back(list[i]);
+ }
+return result; 
+} 
+This function takes a Python list and two indices, and returns a new list consisting of the elements of the original list from the start index to the end index (exclusive). 
+ 
+We can use a std::vector to store the list elements, as it provides efficient access to the list elements and supports the slicing operation.
+
+Explanation:
+Detailed explanation:
+ 
+The grammar is ambiguous because there is more than one way to parse an expression like "E + T * F". For example, we could parse it as "(E + T) * F" or "E + (T * F)". 
+ 
+To make the grammar non-ambiguous, we need to specify how the operators + and * should be grouped. For example, we could say that + has higher precedence than , so that "E + T F" would be parsed as "E + (T * F)". 
+ 
+The grammar is acceptable for an LL parser, but not for an LR parser, because it is not left-recursive. 
+ 
+To slice a Python list, we can use the following C++ function: 
+ 
+std::vector<int> slice(std::vector<int> list, int start, int end) { 
+std::vector<int> result; 
+for (int i = start; i < end; i++) { 
+result.push_back(list[i]); 
+} 
+return result; 
+}
+ 
+This function takes a Python list and two indices, and returns a new list consisting of the elements of the original list from the start index to the end index (exclusive). 
+ 
+We can use a std::vector to store the list elements, as it provides efficient access to the list elements and supports the slicing operation.
